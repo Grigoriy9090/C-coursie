@@ -49,30 +49,58 @@
 // позиции элемента в двумерном массиве, и возвращает значение этого элемента или же 
 // указание, что такого элемента нет.
 
-using System;
+// using System;
 
-class Program
-{
-    
-    static void Main(string[] args)
-    {
-        int[,] array = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } }; // пример двумерного массива
+// class Program
+// {
 
-        Console.Write("Введите номер строки: ");
-        int row = int.Parse(Console.ReadLine());
+//     static void Main(string[] args)
+//     {
+//         int[,] array = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } }; // пример двумерного массива
 
-        Console.Write("Введите номер столбца: ");
-        int column = int.Parse(Console.ReadLine());
+//         Console.Write("Введите номер строки: ");
+//         int row = int.Parse(Console.ReadLine());
+//         Console.Write("Введите номер столбца: ");
+//         int column = int.Parse(Console.ReadLine());
 
-        if (row >= array.GetLength(0) || column >= array.GetLength(1))
-        {
-            Console.WriteLine("Такого элемента не существует!");
-        }
-        else
-        {
-            Console.WriteLine("Значение элемента: " + array[row, column]);
-        }
+//         if (row >= array.GetLength(0) || column >= array.GetLength(1))
+//         {
+//             Console.WriteLine("Такого элемента не существует!");
+//         }
+//         else
+//         {
+//             Console.WriteLine("Значение элемента: " + array[row, column]);
+//         }
 
-        Console.ReadKey();
-    }
-}
+//         Console.ReadKey();
+//     }
+// }
+
+// Домашняя задача 52: Задайте двумерный массив из целых чисел. Найдите средннее арифметическое элементов в каждом столбце.
+
+// using System;
+
+// class Program
+// {
+//     static void Main(string[] args)
+//     {
+//         int[,] array = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } }; // пример двумерного массива
+
+//         int rows = array.GetLength(0);
+//         int columns = array.GetLength(1);
+
+//         for (int j = 0; j < columns; j++)
+//         {
+//             double sum = 0;
+//             for (int i = 0; i < rows; i++)
+//             {
+//                 sum += array[i, j];
+//             }
+//             double average = sum / rows;
+//             Console.WriteLine("Среднее арифметическое элементов в столбце " + j + ": " + average);
+//         }
+
+//         Console.ReadKey();
+//     }
+// }
+
