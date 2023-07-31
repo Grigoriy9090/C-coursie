@@ -13,7 +13,7 @@
 // git branch -M main
 // git push -u origin main
 
-// Console.WriteLine("Hello, World!");
+// System.Console.WriteLine("Hello, World!");
 
 // // Домашнее задание: Задача 2: Напишите программу на языке C#, которая на вход принимает два числа и выдаёт, 
 // // какое число большее, а какое меньшее 
@@ -60,24 +60,24 @@
 // // Домашняя задача 8: Напишите программу, которая на вход принимает число (N), 
 // // а на выходе показывает все четные числа от одного до N.
 
-// // class Program
-// // {
-// //     static void Main()
-// //     {
-// //         Console.WriteLine("Введите число N:");
-// //         int N = int.Parse(Console.ReadLine());
+// class Program
+// {
+//     static void Main()
+//     {
+//         Console.WriteLine("Введите число N:");
+//         int N = int.Parse(Console.ReadLine());
 
-// //         Console.WriteLine("Четные числа от 1 до " + N + ":");
+//         Console.WriteLine("Четные числа от 1 до " + N + ":");
 
-// //         for (int i = 1; i <= N; i++)
-// //         {
-// //             if (i % 2 == 0)
-// //             {
-// //                 Console.WriteLine(i);
-// //             }
-// //         }
-// //     }
-// // }
+//         for (int i = 1; i <= N; i++)
+//         {
+//             if (i % 2 == 0)
+//             {
+//                 Console.WriteLine(i);
+//             }
+//         }
+//     }
+// }
 
 // // Новая лекция и семинар. Задача 1 найти максимальное из 9 при помощи стихийного подхода.
 
