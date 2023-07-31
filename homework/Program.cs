@@ -104,3 +104,213 @@
 //     }
 // }
 
+// Домашняя задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы 
+// каждой строки двумерного массива.
+
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// В итоге получается вот такой массив:
+// 7 4 2 1
+// 9 5 3 2
+// 8 4 4 2
+
+// using System;
+
+// class Program
+// {
+//     static void Main(string[] args)
+//     {
+//         int[,] array = new int[,]
+//         {
+//             {5, 2, 9, 1},
+//             {3, 8, 4, 6},
+//             {7, 0, 2, 5}
+//         }; // создаем двумерный массив
+
+//         // выводим исходный массив на экран
+//         Console.WriteLine("Исходный массив:");
+//         PrintArray(array);
+
+//         // упорядочиваем элементы каждой строки по возрастанию
+//         for (int i = 0; i < array.GetLength(0); i++)
+//         {
+//             for (int j = 0; j < array.GetLength(1) - 1; j++)
+//             {
+//                 for (int k = j + 1; k < array.GetLength(1); k++)
+//                 {
+//                     if (array[i, j] > array[i, k])
+//                     {
+//                         int temp = array[i, j];
+//                         array[i, j] = array[i, k];
+//                         array[i, k] = temp;
+//                     }
+//                 }
+//             }
+//         }
+
+//         // выводим упорядоченный массив на экран
+//         Console.WriteLine("Упорядоченный массив:");
+//         PrintArray(array);
+
+//         Console.ReadKey();
+//     }
+
+//     static void PrintArray(int[,] array)
+//     {
+//         for (int i = 0; i < array.GetLength(0); i++)
+//         {
+//             for (int j = 0; j < array.GetLength(1); j++)
+//             {
+//                 Console.Write(array[i, j] + " ");
+//             }
+//             Console.WriteLine();
+//         }
+//     }
+// }
+
+// Домашняя задача 56: Задайте прямоугольный двумерный массив. Напишите программу, 
+// которая будет находить строку с наименьшей суммой элементов.
+
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// 5 2 6 7
+// Программа считает сумму элементов в каждой строке и выдаёт 
+// номер строки с наименьшей суммой элементов: 1 строка
+
+// using System;
+
+// class Program
+// {
+//     static void Main(string[] args)
+//     {
+//         int[,] array = new int[,]
+//         {
+//             {5, 2, 9, 1},
+//             {3, 8, 4, 6},
+//             {7, 0, 2, 5}
+//         }; // создаем двумерный массив
+
+//         // выводим исходный массив на экран
+//         Console.WriteLine("Исходный массив:");
+//         PrintArray(array);
+
+//         // находим строку с наименьшей суммой элементов
+//         int minRow = 0;
+//         int minSum = int.MaxValue;
+//         for (int i = 0; i < array.GetLength(0); i++)
+//         {
+//             int rowSum = 0;
+//             for (int j = 0; j < array.GetLength(1); j++)
+//             {
+//                 rowSum += array[i, j];
+//             }
+//             if (rowSum < minSum)
+//             {
+//                 minRow = i;
+//                 minSum = rowSum;
+//             }
+//         }
+
+//         // выводим строку с наименьшей суммой элементов на экран
+//         Console.WriteLine($"Строка с наименьшей суммой элементов: {minRow}");
+//         Console.WriteLine($"Сумма элементов в этой строке: {minSum}");
+
+//         Console.ReadKey();
+//     }
+
+//     static void PrintArray(int[,] array)
+//     {
+//         for (int i = 0; i < array.GetLength(0); i++)
+//         {
+//             for (int j = 0; j < array.GetLength(1); j++)
+//             {
+//                 Console.Write(array[i, j] + " ");
+//             }
+//             Console.WriteLine();
+//         }
+//     }
+// }
+
+// Домашняя задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+// Например, даны 2 матрицы:
+// 2 4 | 3 4
+// 3 2 | 3 3
+// Результирующая матрица будет:
+// 18 20
+// 15 18
+
+// using System;
+
+// class Program
+// {
+//     static void Main(string[] args)
+//     {
+//         int[,] matrix1 = new int[,]
+//         {
+//             {1, 2},
+//             {3, 4},
+//             {5, 6}
+//         }; // создаем первую матрицу
+
+//         int[,] matrix2 = new int[,]
+//         {
+//             {7, 8, 9},
+//             {10, 11, 12}
+//         }; // создаем вторую матрицу
+
+//         // выводим исходные матрицы на экран
+//         Console.WriteLine("Первая матрица:");
+//         PrintMatrix(matrix1);
+
+//         Console.WriteLine("Вторая матрица:");
+//         PrintMatrix(matrix2);
+
+//         // проверяем, можно ли перемножить матрицы
+//         if (matrix1.GetLength(1) != matrix2.GetLength(0))
+//         {
+//             Console.WriteLine("Нельзя перемножить эти матрицы");
+//             Console.ReadKey();
+//             return;
+//         }
+
+//         // создаем новую матрицу для записи результата
+//         int[,] resultMatrix = new int[matrix1.GetLength(0), matrix2.GetLength(1)];
+
+//         // перемножаем матрицы
+//         for (int i = 0; i < matrix1.GetLength(0); i++)
+//         {
+//             for (int j = 0; j < matrix2.GetLength(1); j++)
+//             {
+//                 int sum = 0;
+//                 for (int k = 0; k < matrix1.GetLength(1); k++)
+//                 {
+//                     sum += matrix1[i, k] * matrix2[k, j];
+//                 }
+//                 resultMatrix[i, j] = sum;
+//             }
+//         }
+
+//         // выводим результат на экран
+//         Console.WriteLine("Результат умножения матриц:");
+//         PrintMatrix(resultMatrix);
+
+//         Console.ReadKey();
+//     }
+
+//     static void PrintMatrix(int[,] matrix)
+//     {
+//         for (int i = 0; i < matrix.GetLength(0); i++)
+//         {
+//             for (int j = 0; j < matrix.GetLength(1); j++)
+//             {
+//                 Console.Write(matrix[i, j] + " ");
+//             }
+//             Console.WriteLine();
+//         }
+//     }
+// }
+
