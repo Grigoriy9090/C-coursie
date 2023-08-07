@@ -1527,7 +1527,7 @@
 //         return start.ToString();
 //     }
 //     return (start+ " "+ PrintNumber(start+1, end));
-// }
+//
 
 // Console.WriteLine(PrintNumber(count, num));
 
@@ -1554,26 +1554,26 @@
 // M = 1; N = 5 -> "1, 2, 3, 4, 5"
 // M = 4; N = 8 -> "4, 6, 7, 8"
 
-// Console.WriteLine("Введите число");// с рекурсией
-// int num = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите число");// с рекурсией
+int num = Convert.ToInt32(Console.ReadLine());
 
-// Console.WriteLine("Введите число");
-// int num2 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите число");
+int num2 = Convert.ToInt32(Console.ReadLine());
 
-// string PrintNumber(int start, int end)
-// {
-//     if (start>end)
-//     {
-//         return "Введите коректное число";
-//     }
-//     if(start==end)
-//     {
-//         return start.ToString();
-//     }
-//     return (start+ " "+ PrintNumber(start+1, end));
-// }
+string PrintNumber(int start, int end)
+{
+    if (start>end)
+    {
+        return "Введите коректное число";
+    }
+    if(start==end)
+    {
+        return start.ToString();
+    }
+    return (start+ " "+ PrintNumber(start+1, end));
+}
 
-// Console.WriteLine(PrintNumber(num, num2));
+Console.WriteLine(PrintNumber(num, num2));
 
 // Задача 67: Напишите программу, которая будет 
 // принимать на вход число и возвращать сумму его цифр.
